@@ -1,4 +1,4 @@
-# Bright Path Tutoring
+# ABC Tutoring
 
 A static, mobile-first tutoring booking prototype for Dana. Booked slots use `localStorage`, so availability changes are intentionally device-local for this GitHub Pages simulation.
 
@@ -10,7 +10,7 @@ npm install
 npm run dev
 ```
 
-Add the `VITE_POSTHOG_*` values to enable privacy-safe product events. For real email, create one EmailJS service and two templates (parent confirmation and Dana notification), then add the EmailJS values from `.env.example`. Template variables: `parent_name`, `parent_email`, `student_first_name`, `student_grade`, `subject`, `tutor_name`, `session_time`, `rate`, `dana_email`, and `to_email`.
+Add the `VITE_POSTHOG_*` values to enable privacy-safe product events. For real email, create one EmailJS service and one booking template, enable its Auto-Reply for the parent confirmation, then add the three EmailJS values from `.env.example`. Template variables: `parent_name`, `parent_email`, `student_first_name`, `student_grade`, `subject`, `tutor_name`, `session_time`, and `rate`.
 
 ## GitHub Pages
 
