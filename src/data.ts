@@ -1,0 +1,11 @@
+export type Tutor = { id:string; name:string; image:string; imageAlt:string; subjects:string[]; grades:string[]; rate:number; blurb:string; credential:string; availability:{dayOffset:number;hour:number}[] };
+
+export const TUTORS: Tutor[] = [
+  { id:"maya-chen", name:"Maya Chen", image:"/tutors/maya.png", imageAlt:"Maya smiling in a bright study space", subjects:["Math","Physics"], grades:["6","7","8","9","10","11","12"], rate:48, blurb:"Patient, visual explanations that turn intimidating problems into small, solvable steps.", credential:"M.S. Applied Mathematics · 6 years tutoring", availability:[{dayOffset:1,hour:16},{dayOffset:2,hour:18},{dayOffset:4,hour:15}] },
+  { id:"jordan-brooks", name:"Jordan Brooks", image:"/tutors/jordan.png", imageAlt:"Jordan smiling in a modern study space", subjects:["English","History"], grades:["3","4","5","6","7","8","9","10"], rate:42, blurb:"Warm, discussion-led sessions that help students find their voice and organize their ideas.", credential:"B.A. English Education · 5 years tutoring", availability:[{dayOffset:1,hour:17},{dayOffset:3,hour:16},{dayOffset:5,hour:11}] },
+  { id:"elena-ruiz", name:"Elena Ruiz", image:"/tutors/elena.jpg", imageAlt:"Elena smiling beside a bookshelf", subjects:["Biology","Chemistry"], grades:["8","9","10","11","12"], rate:52, blurb:"Curious, hands-on science coaching that connects classroom concepts to everyday life.", credential:"M.S. Biology · Former classroom teacher", availability:[{dayOffset:2,hour:16},{dayOffset:3,hour:18},{dayOffset:6,hour:10}] },
+];
+export const SUBJECTS=[...new Set(TUTORS.flatMap(t=>t.subjects))].sort();
+export const GRADES=Array.from({length:10},(_,i)=>String(i+3));
+export function filterTutors(tutors:Tutor[],subject:string,grade:string){return tutors.filter(t=>(!subject||t.subjects.includes(subject))&&(!grade||t.grades.includes(grade)))}
+export function tutorSlots(tutor:Tutor){return tutor.availability.map(({dayOffset,hour})=>{const date=new Date();date.setDate(date.getDate()+dayOffset);date.setHours(hour,0,0,0);return{id:`${tutor.id}:${date.toISOString()}`,startsAt:date.toISOString(),label:new Intl.DateTimeFormat("en-US",{weekday:"short",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}).format(date)}})}

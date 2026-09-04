@@ -1,5 +1,7 @@
 # Dana Tutoring Booking Website Design
 
+> **Static deployment revision (approved September 4, 2026):** GitHub Pages is the required host. This revision supersedes the D1, server-route, Resend, and Sites-hosting details below. The prototype is a static React/Vite site; bookings and removed slots persist per browser in `localStorage`; EmailJS sends the parent and Dana templates from the browser; and PostHog remains client-side with the privacy allowlist. Online tutor portraits replace generated assets. The production artifact must be verified at the same root path used by `djsorg012.github.io`.
+
 ## Purpose
 
 Create a clean, friendly, mobile-first tutoring website where parents can compare a fixed set of tutors, see live availability, and book a session without creating an account. The first version will support persistent demo bookings, real transactional email through Resend, and privacy-conscious PostHog analytics. It will not include online payments or tutor self-management.

@@ -1,5 +1,7 @@
 # Dana Tutoring Booking Website Implementation Plan
 
+> **Static deployment revision (approved September 4, 2026):** The implementation target changed to GitHub Pages. The delivered implementation therefore uses Vite static output, device-local `localStorage` booking state, EmailJS, GitHub Actions Pages deployment, and browser verification. D1, server routes, Resend, and Sites deployment tasks in the original plan are superseded by this revision.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build and deploy Dana’s mobile-first tutor discovery and booking website with persistent slot reservations, Resend transactional email, privacy-safe PostHog analytics, and a synthetic traffic simulator.
@@ -747,4 +749,3 @@ git commit -m "docs: finalize tutoring prototype operations"
 - [ ] **Step 9: Stop the retained development server and report the deployed URL**
 
 Stop the preview terminal after hosting succeeds. Return the deployed Sites URL as the primary deliverable and summarize the verified booking, Resend, PostHog, and simulator outcomes.
-
